@@ -9,6 +9,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import model.tvs.TVBuilder;
 import model.washer.WasherBuilder;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ import java.util.List;
 
 
 public class ParserAppliance {
+
+    private static final Logger log = Logger.getLogger(ParserAppliance.class);
 
     public List<Appliance> readDirectory(String path){
         List<Appliance> appliances = new ArrayList<Appliance>();
@@ -109,8 +112,10 @@ public class ParserAppliance {
             parser.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            log.error(e);
         } catch (IOException e) {
             e.printStackTrace();
+            log.error(e);
         }
         return fridges;
     }
@@ -158,8 +163,10 @@ public class ParserAppliance {
             parser.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            log.error(e);
         } catch (IOException e) {
             e.printStackTrace();
+            log.error(e);
         }
         return washers;
     }
@@ -198,8 +205,10 @@ public class ParserAppliance {
             parser.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            log.error(e);
         } catch (IOException e) {
             e.printStackTrace();
+            log.error(e);
         }
         return microwaves;
     }
@@ -243,8 +252,10 @@ public class ParserAppliance {
             parser.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            log.error(e);
         } catch (IOException e) {
             e.printStackTrace();
+            log.error(e);
         }
         return tVs;
     }
