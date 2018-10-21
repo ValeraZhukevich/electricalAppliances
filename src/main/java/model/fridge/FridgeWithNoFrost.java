@@ -24,6 +24,7 @@ public class FridgeWithNoFrost extends Fridge implements  NoFrost{
 
         if (!getBrand().toLowerCase().equals(fridge.getBrand().toLowerCase())) return false;
         if (!getModel().toLowerCase().equals(fridge.getModel().toLowerCase())) return false;
+        if (!getSerialNumber().toLowerCase().equals(fridge.getSerialNumber().toLowerCase())) return false;
         if (Double.compare(fridge.getPowerConsumption(), getPowerConsumption()) != 0) return false;
         if (Double.compare(fridge.getPrice(), getPrice()) != 0) return false;
         if (Double.compare(fridge.getMinFridgeTemperature(), getMinFridgeTemperature()) != 0) return false;

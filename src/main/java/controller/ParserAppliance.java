@@ -63,7 +63,7 @@ public class ParserAppliance {
         try {
             Reader reader = new FileReader(path);
             String[] headerMapping = {"brand", "model", "serial number", "power consumption",
-                    "min model.fridge temperature", "max model.fridge temperature", "min freeze temperature",
+                    "min fridge temperature", "max fridge temperature", "min freeze temperature",
                     "max freeze temperature", "volume", "no frost", "price"};
             CSVParser parser = new CSVParser(reader, CSVFormat.DEFAULT
                     .withTrim()
@@ -78,12 +78,12 @@ public class ParserAppliance {
                 FridgeBuilder fridgeBuilder = new FridgeBuilder();
                 readBasicParameters(record, fridgeBuilder.getBasicBuilder());
 
-                if(record.get("min model.fridge temperature") != null){
-                    minFridgeTemperature = Double.parseDouble(record.get("min model.fridge temperature"));
+                if(record.get("min fridge temperature") != null){
+                    minFridgeTemperature = Double.parseDouble(record.get("min fridge temperature"));
                     fridgeBuilder.minFridgeTemperature(minFridgeTemperature);
                 }
-                if(record.get("max model.fridge temperature") != null){
-                    maxFridgeTemperature = Double.parseDouble(record.get("max model.fridge temperature"));
+                if(record.get("max fridge temperature") != null){
+                    maxFridgeTemperature = Double.parseDouble(record.get("max fridge temperature"));
                     fridgeBuilder.maxFridgeTemperature(maxFridgeTemperature);
                 }
                 if(record.get("min freeze temperature") != null){
