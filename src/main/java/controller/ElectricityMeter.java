@@ -49,6 +49,12 @@ public class ElectricityMeter {
     }
 
     public void decreaseInstantPowerConsumption(int value){
-        instantPowerConsumption -= value;
+        if(value > instantPowerConsumption){
+            instantPowerConsumption = 0;
+        }
+        else{
+            instantPowerConsumption -= value;
+        }
+
     }
 }
