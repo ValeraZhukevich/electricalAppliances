@@ -21,19 +21,19 @@ public class ParserAppliance {
         List<Appliance> appliances = new ArrayList<Appliance>();
         List<String> fileNames = getFileNames(path);
         for (String fileName : fileNames){
-            if(fileName.toLowerCase().contains("model/fridge")){
+            if(fileName.toLowerCase().contains("fridge")){
                 String fullPath = makePath2File(path,fileName);
                 appliances.addAll(readFridgeCSV(fullPath));
             }
-            else if(fileName.toLowerCase().contains("model/microwaves")){
+            else if(fileName.toLowerCase().contains("microwaves")){
                 String fullPath = makePath2File(path,fileName);
                 appliances.addAll(readMicrowaveCSV(fullPath));
             }
-            else if(fileName.toLowerCase().contains("model/tvs")){
+            else if(fileName.toLowerCase().contains("tvs")){
                 String fullPath = makePath2File(path,fileName);
                 appliances.addAll(readTVCSV(fullPath));
             }
-            else if(fileName.toLowerCase().contains("model/washer")){
+            else if(fileName.toLowerCase().contains("washer")){
                 String fullPath = makePath2File(path,fileName);
                 appliances.addAll(readWasherCSV(fullPath));
             }
@@ -41,13 +41,11 @@ public class ParserAppliance {
         return appliances;
     }
 
-
-
-    private String makePath2File(String path, String fileName){
+    public String makePath2File(String path, String fileName){
         return new String(path + "\\" + fileName);
     }
 
-    private List<String> getFileNames(String path){
+    public List<String> getFileNames(String path){
         List<String> fileNames = new ArrayList<String>();
         File folder = new File(path);
         File[] files = folder.listFiles();
@@ -60,7 +58,7 @@ public class ParserAppliance {
         return fileNames;
     }
 
-    private List<Appliance> readFridgeCSV(String path){
+    public List<Appliance> readFridgeCSV(String path){
         List<Appliance> fridges = new ArrayList<Appliance>();
         try {
             Reader reader = new FileReader(path);
