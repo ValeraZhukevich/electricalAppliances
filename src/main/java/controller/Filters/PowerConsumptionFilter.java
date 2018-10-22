@@ -7,7 +7,7 @@ public class PowerConsumptionFilter implements Filter {
     private int maxPowerConsumption;
     private int minPowerConsumption;
 
-    public PowerConsumptionFilter(int maxPowerConsumption, int minPowerConsumption) {
+    public PowerConsumptionFilter(int minPowerConsumption, int maxPowerConsumption) {
         this.maxPowerConsumption = maxPowerConsumption;
         this.minPowerConsumption = minPowerConsumption;
     }
