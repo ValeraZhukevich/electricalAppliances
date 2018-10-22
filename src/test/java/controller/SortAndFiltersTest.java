@@ -98,7 +98,7 @@ public class SortAndFiltersTest {
 
     @DataProvider
     public Object[][] data() {
-        return new Object[][] { { 810, 840, "1236589", 1000, 1200, "20MW700-1479BKB"},
+        return new Object[][] { { 810, 840, "1236589", 1000, 1200, "25654qw3"},
                 { 900, 1000, "58648L", 40, 50, "25659ds2"} };
     }
 

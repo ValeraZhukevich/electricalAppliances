@@ -1,10 +1,11 @@
 package controller;
 
+import controller.Filters.Filter;
+import model.ElectricityMeter;
 import model.appliance.Appliance;
 import org.apache.log4j.Logger;
 
-import java.util.Collection;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -34,6 +35,15 @@ public class ControllerOfAppliance {
             electricityMeter.increaseInstantPowerConsumption(appliance.getPowerConsumption());
             log.info(appliance.toString() + " was turn on");
         }
+    }
+
+    public List<Appliance> getFilteredListOfAppliances(Filter filter){
+        List<Appliance> filteredList = SortAndFilters.filterAppliances(listOfAppliances, filter);
+        return filteredList;
+    }
+
+    public void sortListOfAppliances(Comparator<Appliance> comparator){
+        SortAndFilters.sortByComparator(listOfAppliances, comparator);
     }
 
     public void turnOffAppliance(Appliance appliance){
